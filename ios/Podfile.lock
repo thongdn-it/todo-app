@@ -1111,7 +1111,11 @@ PODS:
     - React-jsi (= 0.73.8)
     - React-logger (= 0.73.8)
     - React-perflogger (= 0.73.8)
+  - simdjson (3.1.0-wmelon1)
   - SocketRocket (0.6.1)
+  - WatermelonDB (0.27.1):
+    - React
+    - simdjson
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -1187,6 +1191,8 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "simdjson (from `../node_modules/@nozbe/simdjson`)"
+  - "WatermelonDB (from `../node_modules/@nozbe/watermelondb`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1301,6 +1307,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  simdjson:
+    :path: "../node_modules/@nozbe/simdjson"
+  WatermelonDB:
+    :path: "../node_modules/@nozbe/watermelondb"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -1364,9 +1374,11 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 1c40cfe98dcc7b06354d96a1cd8ee10cbc4cc797
   React-utils: 4cc2ba652f5df1c8f0461d4ae9e3ee474c1354ea
   ReactCommon: 1da3fc14d904883c46327b3322325eebf60a720a
+  simdjson: e6bfae9ce4bcdc80452d388d593816f1ca2106f3
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
+  WatermelonDB: 842d22ba555425aa9f3ce551239a001200c539bc
   Yoga: 2a16e58450c48e110211dae1159fb114bbcdcfc0
 
-PODFILE CHECKSUM: 7c8f1f13cc425fda71d713463d85260ec423590c
+PODFILE CHECKSUM: 948afb1b513631a756c02ce744f4e8018608fb6a
 
 COCOAPODS: 1.15.2

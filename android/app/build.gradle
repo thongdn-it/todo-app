@@ -102,6 +102,10 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+
+    packagingOptions {
+        pickFirst '**/libc++_shared.so' // ⬅️ This (if missing)
+    }
 }
 
 dependencies {
@@ -114,6 +118,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation project(':watermelondb-jsi')
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

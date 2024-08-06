@@ -6,11 +6,14 @@ import com.facebook.react.ReactApplication
 import com.facebook.react.ReactHost
 import com.facebook.react.ReactNativeHost
 import com.facebook.react.ReactPackage
+import com.facebook.react.bridge.JSIModulePackage
+import com.facebook.react.bridge.JSIModuleSpec
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.flipper.ReactNativeFlipper
 import com.facebook.soloader.SoLoader
+import com.nozbe.watermelondb.jsi.WatermelonDBJSIPackage
 
 class MainApplication : Application(), ReactApplication {
 
@@ -28,6 +31,19 @@ class MainApplication : Application(), ReactApplication {
 
         override val isNewArchEnabled: Boolean = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED
         override val isHermesEnabled: Boolean = BuildConfig.IS_HERMES_ENABLED
+
+        override fun getJSIModulePackage(): JSIModulePackage {
+          return JSIModulePackage { reactApplicationContext, jsContext ->
+            val modules = mutableListOf<JSIModuleSpec<*>>()
+            modules.addAll(
+              WatermelonDBJSIPackage().getJSIModules(
+                reactApplicationContext,
+                jsContext
+              )
+            )
+            modules
+          }
+        }
       }
 
   override val reactHost: ReactHost
