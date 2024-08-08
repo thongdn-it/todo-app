@@ -7,6 +7,7 @@ import {
 } from 'react-native-safe-area-context';
 import {NativeBaseProvider, StatusBar} from 'native-base';
 
+import './utils/watermelondb/index';
 import {tdTheme} from './constants/themes';
 import TDAppNavigator from './routes/main_navigator';
 

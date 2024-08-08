@@ -11,6 +11,6 @@ export const tdTheme = extendTheme({
     secondary: tdColors.dolphin,
   },
   config: {
-    initialColorMode: 'dark',
+    initialColorMode: 'light',
   },
 });
